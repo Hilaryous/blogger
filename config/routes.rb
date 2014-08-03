@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :tags
 end
 
 #The router will provide two methods to us using that name,
