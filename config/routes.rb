@@ -4,6 +4,12 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :tags
+  resources :authors
+  resources :author_sessions, only: [ :new, :create, :destroy ]
+
+  get 'login' => 'author_sessions#new'
+  get 'logout' => 'author_sessions#destroy'
+  #get({'pages/:id' => 'pages#show'})
 end
 
 #The router will provide two methods to us using that name,
